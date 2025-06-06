@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mosca extends Actor
+public class Mosca extends Inseto
 {
     /**
      * Act - do whatever the Mosca wants to do. This method is called whenever
@@ -20,5 +20,8 @@ public class Mosca extends Actor
             turn(45-Greenfoot.getRandomNumber(90));
             
         }
+        if(isAtEdge()){ //esta em um canto
+            turn(180);
     }
+}
 }
