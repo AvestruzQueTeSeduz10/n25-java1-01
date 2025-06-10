@@ -8,6 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mosca extends Inseto
 {
+    //Fields
+    private int velocidade;
+    private int rotacao;
+    //Contructor padrao
+    public Mosca(){
+        velocidade = 1;
+        rotacao = 0;
+    }
+    //contructor com parametro
+    public Mosca(int vel,int rot){
+        velocidade = vel;
+        rotacao = rot;
+        setRotation(rot);
+    }
     /**
      * Act - do whatever the Mosca wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,7 +29,7 @@ public class Mosca extends Inseto
     public void act()
     {
         // Add your action code here.
-        move(1);
+        move(velocidade);
         if(Greenfoot.getRandomNumber(100)<20){
             turn(45-Greenfoot.getRandomNumber(90));
             

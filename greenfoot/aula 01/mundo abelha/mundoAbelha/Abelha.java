@@ -10,9 +10,11 @@ public class Abelha extends Actor
 {
     
      //Definindo os fields
-    int vidas;
-    int score;
-    int PONTOS = 100;
+    private int vidas;
+    private int score;
+    private int PONTOS = 100;
+    private int indice;
+    private GreenfootImage imgs[];
     //Definindo o constructor
     /**
      * Constructor da Classe Abelha
@@ -20,6 +22,14 @@ public class Abelha extends Actor
     public Abelha(){
         vidas = 3; //vai ter 3 vidas
         score = 0;
+        //GreenfootImage img = new GreenfootImage("bee01.png");
+        //setImage(img);
+        indice = 0;
+        imgs = new GreenfootImage[4];//definindo vetor 4 posições
+        for (int i=0; i<4 ; i++){
+            imgs[i] = new GreenfootImage("bee0" + (i+1) + ".png");
+        }
+        setImage(imgs[indice]);
     }
     /**
      * Act - do whatever the Abelha wants to do. This method is called whenever
@@ -38,6 +48,7 @@ public class Abelha extends Actor
         verificarPosicao();
         capturarMosca();
         serCapturadoPelaAranha();
+        animarAbelha();
     }
     /**
      * Método que verifica a p0osicao da abelha.
@@ -97,7 +108,8 @@ public class Abelha extends Actor
             int posY = Greenfoot.getRandomNumber(
                         getWorld().getHeight()) + 1;
             //Criando a mosca
-            Mosca mosca = new Mosca();
+            Mosca mosca = new Mosca(Greenfoot.getRandomNumber(3) + 1,
+            Greenfoot.getRandomNumber(360));
             //Colocando no mundo na posição X, Y
             getWorld().addObject(mosca, posX, posY);
         }
@@ -131,5 +143,10 @@ public class Abelha extends Actor
     public void atualizarScore(){
         score += PONTOS; //score = score + PONTOS
         getWorld().showText("Score: " + score, 100, 10);
+    }
+    
+    public void animarAbelha(){
+        indice = (indice + 1) % 4;
+        setImage(imgs[indice]);
     }
 }
