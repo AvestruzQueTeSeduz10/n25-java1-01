@@ -1,0 +1,10 @@
+package br.com.senaisp.bauru.classes04;
+
+public class Exemplo_01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
