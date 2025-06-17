@@ -1,0 +1,1 @@
+INDEX VERSION 1.134+C:\Users\Aluno\Documents\n25-java1-01\Eclipse\WorkSpace\n25-java1-01\src\br\com\senaisp\bauru\aula03\.metadata\.plugins\org.eclipse.jdt.core
