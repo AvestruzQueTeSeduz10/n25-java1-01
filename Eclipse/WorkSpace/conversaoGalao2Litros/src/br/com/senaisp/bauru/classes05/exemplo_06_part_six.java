@@ -17,6 +17,5 @@ public class exemplo_06_part_six {
 		default: System.out.println("opção Invalida!");
  		}
  		sc.close();
- 		
     }
 }
