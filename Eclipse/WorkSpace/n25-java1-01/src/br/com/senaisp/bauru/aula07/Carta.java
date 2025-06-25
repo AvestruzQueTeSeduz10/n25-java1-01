@@ -46,6 +46,15 @@ public class Carta {
 	@Override
 	public String toString() {
 		
-		return super.toString();
+		String ret = "1┌─────┐\n"
+				   + "2│#   │\n"
+				   + "3│  !  │\n"
+				   + "4│   #│\n"
+				   + "5└─────┘\n";
+		String ap = (getNumero().equals("10") ? "" : " ");
+		ret = ret.replaceFirst("#",getNumero() + ap);
+		ret = ret.replaceAll("!",getNaipe());
+		ret = ret.replaceFirst("#", ap + getNumero());
+		return ret;
 	}
 }
